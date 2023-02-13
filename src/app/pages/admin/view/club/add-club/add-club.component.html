@@ -1,0 +1,35 @@
+<mat-card>
+    <h1>Agregar Nuevo Club</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form (ngSubmit)="formSubmit()">
+                        <mat-form-field class="w100" appearance="outline"> 
+                            <mat-label>Nombre Club</mat-label>
+                            <input 
+                            required
+                            autofocus
+                            type="text"
+                            name="nomclub"
+                            matInput
+                            placeholder="Digite el nombre de la club"
+                            [(ngModel)]="clubData.nomclub">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="mt20 w100">
+                            <mat-label>Regional</mat-label>
+                            <mat-select name="categoria" [(ngModel)]="clubData.regional.idregional">
+                                <mat-option *ngFor="let p of regionales" [value]="p.idregional">
+                                    {{p.nomregional}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class="container text-center mt15">
+                            <button mat-raised-button color="primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

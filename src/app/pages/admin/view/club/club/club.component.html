@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-list>
+        <div class="nat-subheader">
+            Todos los clubes
+        </div>
+        <mat-list-item *ngFor="let c of clubes">
+            <mat-icon mat-list-icon>category</mat-icon>
+           
+            <div mat-line>{{c.nomclub}}</div>
+            <div mat-line>{{c.pais.nompais}}</div>
+      
+            <mat-card-actions>
+                
+                <button mat-flat-button [routerLink]="'/admin/club/'+c.idclub" color="primary" class="ml20">Actualizar</button>
+                
+                <button mat-flat-button color="warn" class="ml10" (click)="eliminar(c.idclub)">Eliminar</button>
+            </mat-card-actions>
+            <mat-divider></mat-divider>
+
+        </mat-list-item>
+    </mat-list>
+    <div class="container text-center mt20">
+        <button routerLink="/admin/add-club" mat-raised-button color="primary">Agregar Club</button>
+    </div>
+</mat-card>

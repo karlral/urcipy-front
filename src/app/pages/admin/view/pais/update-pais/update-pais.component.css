@@ -1,0 +1,33 @@
+.w100{
+    width: 100%;
+}
+
+:host ::ng-deep .mat-input-element::placeholder{
+    color: white !important;
+    /* Add other styles */
+}
+
+/* To change mat form field border color 
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color:green;
+}*/
+
+/* To change mat form field border color on focus 
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+    color: green;
+}*/
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+   }
+  
+  /* ::ng-deep.mat-form-field-underline {
+    /*change color of underline
+    background-color: green !important;
+  } */
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: white !important;;
+  }

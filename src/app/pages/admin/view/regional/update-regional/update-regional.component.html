@@ -1,0 +1,67 @@
+<mat-card>
+    <h1>Actualizar Regional</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-4 offset-md-1">
+                    <form (ngSubmit)="formSubmit()">
+                        <mat-form-field class="w100" appearance="outline"> 
+                            <mat-label>Nombre Regional</mat-label>
+                            <input 
+                            required
+                            autofocus
+                            type="text"
+                            name="nomregional"
+                            matInput
+                            placeholder="Digite el titulo de la regional"
+                            [(ngModel)]="regionalData.nomregional">
+                        </mat-form-field>
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Nombre Corto</mat-label>
+                            <input 
+                            name="nomcorto"
+                            type="text"
+                            required=""
+                            matInput
+                            placeholder="Digite la nombre corto"
+                             [(ngModel)]="regionalData.nomcorto">
+                        
+                        </mat-form-field>
+                        
+                           <label for="logo" class="form-label">Seleccionar logo</label>
+                            <input 
+                            id="logo"
+                            name="logo"
+                            class="form-control"
+                            accept="image/gif, image/jpeg, image/png"
+                            type="file"
+                             (change)="selectFile($event)">
+                            {{fileName}}
+                       
+                        <div class="container text-center mt15">
+                            <button mat-raised-button color="primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-5 offset-md-1">
+                    <mat-card class="text-center">
+                     <mat-card-header>
+                        <mat-card-title >
+                            
+                                {{regionalData.nomcorto}}
+                            
+                            
+                        </mat-card-title>
+                     </mat-card-header>
+                        <mat-card-content>
+                            <img [src]="regionalData.logo =='' ? '/assets/noimagen.png' : preview =='' ? mediaLocation : preview"  class="card-img-top preview">
+                            
+                        </mat-card-content>
+                    </mat-card>
+
+                    
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

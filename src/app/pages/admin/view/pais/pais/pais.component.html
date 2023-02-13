@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-list>
+        <div class="nat-subheader">
+            Todos los paises
+        </div>
+        <mat-list-item *ngFor="let c of paises">
+            <mat-icon mat-list-icon>category</mat-icon>
+            <div mat-line>{{c.nompais}}</div>
+            <div mat-line>{{c.nacionalidad}}</div>
+      
+            <mat-card-actions>
+                
+                <button mat-flat-button [routerLink]="'/admin/pais/'+c.idpais" color="primary" class="ml20">Actualizar</button>
+                
+                <button mat-flat-button color="warn" class="ml10" (click)="eliminar(c.idpais)">Eliminar</button>
+            </mat-card-actions>
+            <mat-divider></mat-divider>
+
+        </mat-list-item>
+    </mat-list>
+    <div class="container text-center mt20">
+        <button routerLink="/admin/add-pais" mat-raised-button color="primary">Agregar Pais</button>
+    </div>
+</mat-card>

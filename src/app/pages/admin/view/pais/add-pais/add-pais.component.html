@@ -1,0 +1,38 @@
+<mat-card>
+    <h1>Agregar Nuevo Pais</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form (ngSubmit)="formSubmit()">
+                        <mat-form-field class="w100" appearance="outline"> 
+                            <mat-label>Nombre Pais</mat-label>
+                            <input 
+                            required
+                            autofocus
+                            type="text"
+                            name="nompais"
+                            matInput
+                            placeholder="Digite el titulo de la pais"
+                            [(ngModel)]="pais.nompais">
+                        </mat-form-field>
+                        <mat-form-field class="w100" appearance="outline">
+                            <mat-label>Nacionalidad</mat-label>
+                            <input 
+                            name="nacionalidad"
+                            type="text"
+                            required=""
+                            matInput
+                            placeholder="Digite la nacionalidad peyorativa"
+                             [(ngModel)]="pais.nacionalidad">
+                        
+                        </mat-form-field>
+                        <div class="container text-center mt15">
+                            <button mat-raised-button color="primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,35 @@
+<mat-card>
+    <h1>Modificar Ciudad</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <form (ngSubmit)="formSubmit()">
+                        <mat-form-field class="w100" appearance="outline"> 
+                            <mat-label>Nombre Ciudad</mat-label>
+                            <input 
+                            required
+                            autofocus
+                            type="text"
+                            name="nomciudad"
+                            matInput
+                            placeholder="Digite el nombre de la ciudad"
+                            [(ngModel)]="ciudadData.nomciudad">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="mt20 w100">
+                            <mat-label>Pais</mat-label>
+                            <mat-select name="categoria" [(ngModel)]="ciudadData.pais.idpais">
+                                <mat-option *ngFor="let p of paises" [value]="p.idpais">
+                                    {{p.nompais}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <div class="container text-center mt15">
+                            <button mat-raised-button color="primary">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

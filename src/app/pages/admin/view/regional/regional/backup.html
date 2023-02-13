@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-list>
+        <div class="nat-subheader">
+            Todos los regionales
+        </div>
+        <mat-list-item *ngFor="let c of regionales">
+            <mat-icon mat-list-icon>category</mat-icon>
+            <div mat-line>{{c.nomregional}}</div>
+            <div mat-line>{{c.nomcorto}}</div>
+      
+            <mat-card-actions>
+                
+                <button mat-flat-button [routerLink]="'/admin/regional/'+c.idregional" color="primary" class="ml20">Actualizar</button>
+                
+                <button mat-flat-button color="warn" class="ml10" (click)="eliminar(c.idregional)">Eliminar</button>
+            </mat-card-actions>
+            <mat-divider></mat-divider>
+
+        </mat-list-item>
+    </mat-list>
+    <div class="container text-center mt20">
+        <button routerLink="/admin/add-regional" mat-raised-button color="primary">Agregar Regional</button>
+    </div>
+</mat-card>

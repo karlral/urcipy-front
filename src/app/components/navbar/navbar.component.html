@@ -1,0 +1,63 @@
+<mat-toolbar color="primary">
+    <a [routerLink]="'/'" mat-icon-button class="example-icon" arial="Example icon-button with menu icon">
+      <mat-icon>menu_books</mat-icon>
+    </a>
+    <span>Sistema Campeonatos Regionales</span>
+    <span class="example-spacer"></span>
+    <!--<mat-icon>thumb_up</mat-icon>
+      mat-icon-button class="example-icon" arial="example-icon favorite-icon" aria-label="Example icon-button with heart icon"-->
+    <a 
+    *ngIf="!login.isLoggedIn()"
+    [routerLink]="'/login'" mat-icon-button class="example-icon" arial="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon">
+      <mat-icon>password</mat-icon>
+       Iniciar Sesion
+    </a>
+  
+    <!--<mat-icon>favorite</mat-icon>
+        mat-icon-button class="example-icon" arial="example-icon favorite-icon mr20 ml70" aria-label="Example icon-button with heart icon"-->
+    <a 
+    *ngIf="!login.isLoggedIn()"
+    [routerLink]="'/signup'" mat-icon-button class="example-icon ml90 mr40" arial="example-icon favorite-icon mr20 ml70"
+      aria-label="Example icon-button with heart icon">
+      <mat-icon>subscriptions</mat-icon>
+      Registrar
+    </a>
+  
+    <!--a 
+    *ngIf="login.isLoggedIn()"
+    (click)="logout()" 
+    mat-icon-button class="example-icon mr100" arial="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon">
+      <mat-icon>logout</mat-icon>
+      Cerrar Sesion {{ login.getUser().username }}
+    </a-->
+  
+    <!--button 
+    *ngIf="login.isLoggedIn()"
+    (click)="goUpwd()"
+    mat-button class="example-icon mr10" arial="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon">
+      <mat-icon>password</mat-icon>
+      Cambiar Clave 
+    </button-->
+    <a 
+    *ngIf="login.isLoggedIn()"
+    [routerLink]="'/uppw'" mat-icon-button class="example-icon ml90 mr40" arial="example-icon favorite-icon mr20 ml70"
+      aria-label="Example icon-button with heart icon">
+      <mat-icon>password</mat-icon>
+      Cambiar Clave
+    </a>
+  
+  <!-- && user {{ user.username }}-->
+    <button 
+    *ngIf="isLoggedIn && user"
+    (click)="logout()" 
+    mat-button class="example-icon mr10" arial="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon">
+      <mat-icon>logout</mat-icon>
+      Cerrar Sesion {{user.username}}
+    </button>
+    
+  
+  </mat-toolbar>

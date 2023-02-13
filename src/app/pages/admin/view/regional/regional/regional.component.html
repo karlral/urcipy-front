@@ -1,0 +1,26 @@
+<mat-card class="mt10 text-center" *ngFor="let c of regionales">
+    <mat-card-header>
+        <mat-card-title>
+            {{c.nomregional}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu" xPosition="before" class="text-center">
+                <button mat-menu-item color="primary" [routerLink]="'/admin/regional/'+c.idregional">Actualizar</button>
+                <button  mat-menu-item color="warn" (click)="eliminar(c.idregional)">Eliminar</button>
+              </mat-menu>
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{c.nomcorto}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+        <img [src]="c.logo =='' ? '/assets/noimagen.png' : mediaLocation+c.logo"  class="card-img-top preview">
+        
+    </mat-card-content>
+</mat-card>
+<div class="container text-center mt20">
+    <button routerLink="/admin/add-regional" mat-raised-button color="primary">Agregar Regional</button>
+
+</div>

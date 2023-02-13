@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-list>
+        <div class="nat-subheader">
+            Todos los ciudades
+        </div>
+        <mat-list-item *ngFor="let c of ciudades">
+            <mat-icon mat-list-icon>category</mat-icon>
+           
+            <div mat-line>{{c.nomciudad}}</div>
+            <div mat-line>{{c.pais.nompais}}</div>
+      
+            <mat-card-actions>
+                
+                <button mat-flat-button [routerLink]="'/admin/ciudad/'+c.idciudad" color="primary" class="ml20">Actualizar</button>
+                
+                <button mat-flat-button color="warn" class="ml10" (click)="eliminar(c.idciudad)">Eliminar</button>
+            </mat-card-actions>
+            <mat-divider></mat-divider>
+
+        </mat-list-item>
+    </mat-list>
+    <div class="container text-center mt20">
+        <button routerLink="/admin/add-ciudad" mat-raised-button color="primary">Agregar Ciudad</button>
+    </div>
+</mat-card>
