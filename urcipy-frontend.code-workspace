@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "urcipy-frontend",
+			"path": "../git/urcipy-frontend"
+		}
+	],
+	"settings": {}
+}
